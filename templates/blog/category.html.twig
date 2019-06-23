@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}All articles - {{ parent() }}{% endblock %}
+{% block title %}{{ category.name }} - {{ parent() }}{% endblock %}
 
 {% block body %}
     <div>
@@ -9,7 +9,7 @@
         </a>
     </div>
     <div class="mt-3">
-        <h1>All articles from article's table : </h1>
+        <h1>All articles from category : {{ category.name }} </h1>
         {% for article in articles %}
             <div class="card mb-3 shadow">
                 <div class="card-body">
