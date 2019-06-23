@@ -73,31 +73,20 @@ class BlogController extends AbstractController
 
     /**
      * @Route(
-     *     "/category/{categoryName}",
+     *     "/category/{name}",
      *     name="category",
      *     methods={"GET"},
-     *     requirements={"slug" = "^[a-z0-9-]+"},
-     *     defaults={"slug" = "category"}
+     *     requirements={"name" = "^[a-z0-9-]+"},
+     *     defaults={"name" = "category"}
      *     )
-     * @param string $categoryName
+     * @param Category $category
      * @return Response
      */
-    public function showByCategory(string $categoryName): Response
+    public function showByCategory(Category $category): Response
     {
-        if (!$categoryName) {
+        if (!$category) {
             throw $this
                 ->createNotFoundException('No category name has been sent to find articles from category\'s table.');
-        }
-
-        $categoryName = preg_replace('/-/', ' ', ucwords(trim(strip_tags($categoryName)), "-"));
-
-        $category = $this->getDoctrine()->getRepository(Category::class)
-            ->findOneBy(['name' => mb_strtolower($categoryName)]);
-
-        if (!$category) {
-            throw $this->createNotFoundException(
-                'No category with '.$categoryName.' name, found in category\'s table.'
-            );
         }
 
         return $this->render('blog/category.html.twig', [
