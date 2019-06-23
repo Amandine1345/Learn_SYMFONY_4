@@ -73,7 +73,7 @@ class BlogController extends AbstractController
 
     /**
      * @Route(
-     *     "/category/{category}",
+     *     "/category/{categoryName}",
      *     name="category",
      *     methods={"GET"},
      *     requirements={"slug" = "^[a-z0-9-]+"},
@@ -100,11 +100,8 @@ class BlogController extends AbstractController
             );
         }
 
-        $articles = $this->getDoctrine()->getRepository(Article::class)
-            ->findBy(['category' => $category->getId()], ['id' => 'DESC'], 3, 0);
-
         return $this->render('blog/category.html.twig', [
-            'articles' => $articles,
+            'articles' => $category->getArticles(),
             'category' => $category,
         ]);
     }
