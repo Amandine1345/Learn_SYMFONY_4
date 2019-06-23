@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head></head>
+<body style="margin:0;">
+<table cellpadding="0" cellspacing="0" style="width:600px;margin-left:auto;margin-right:auto;border:1px solid #000000">
+    <thead>
+    <tr style="background-color:#343a40;color:#FFF;">
+        <th style="text-align:left;padding:10px;"><strong>Wild Code School</strong></th>
+        <th style="text-align: right;padding:10px;">Notification</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr style="background-color:#343a40;color:#FFF;">
+        <td colspan="2" style="text-align: center;padding:10px;">
+            <a href="{{ url('blog_index') }}" style="color:#FFF">Voir le blog</a>
+        </td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <tr>
+        <td colspan="2" style="padding:10px;">
+            <p>Bonjour,</p>
+            <p>Un nouvel article vient d'être ajouté au blog :</p>
+            <hr>
+            <p><strong>{{ article.title }}</strong></p>
+            <p>{{ article.content }}</p>
+            <p><a href="{{ url('blog_show', {'slug': article.slug}) }}">Voir l'article</a></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
