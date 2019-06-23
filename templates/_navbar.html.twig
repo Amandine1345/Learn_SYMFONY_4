@@ -8,7 +8,15 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="{{ path('blog_index') }}">All Articles</a>
             <a class="nav-item nav-link" href="#"></a>
-            <a class="nav-item nav-link" href="#"></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage blog
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ path('article_index') }}">Articles</a>
+                    <a class="dropdown-item" href="{{ path('category_index') }}">Categories</a>
+                </div>
+            </li>
         </div>
     </div>
 </nav>
