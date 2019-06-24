@@ -15,7 +15,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
      */
     public function getDependencies()
     {
-        return [CategoryFixtures::class, TagFixtures::class];
+        return [CategoryFixtures::class, TagFixtures::class, UserFixtures::class];
     }
     /**
      * @param ObjectManager $manager
@@ -35,6 +35,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $manager->persist($article);
             $article->setCategory($this->getReference('category_' . rand(0,4)));
             $article->addTag($this->getReference('tag_' . rand(0,4)));
+            $article->setAuthor($this->getReference('user_author'));
         }
         $manager->flush();
     }
