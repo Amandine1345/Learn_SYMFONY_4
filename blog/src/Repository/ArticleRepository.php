@@ -19,32 +19,34 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-    // /**
-    //  * @return Article[] Returns an array of Article objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return mixed
+     */
+    public function findAllWithCategoriesAndTags()
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $qb = $this->createQueryBuilder('a')
+            ->leftJoin('a.category', 'c' )
+            ->leftjoin('a.tags', 't')
+            ->addSelect('c, t')
+            ->orderBy('a.id', 'DESC')
+            ->getQuery();
 
-    /*
-    public function findOneBySomeField($value): ?Article
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        return $qb->execute();
     }
-    */
+
+    /**
+     * @return mixed
+     */
+    public function findAllWithCategoriesTagsAndAuthor()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->leftJoin('a.category', 'c' )
+            ->leftJoin('a.tags', 't')
+            ->leftJoin('a.author', 'u')
+            ->addSelect('c, t, u')
+            ->orderBy('a.id', 'DESC')
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }

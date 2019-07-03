@@ -11,6 +11,20 @@ use Faker;
 class ArticleFixtures extends Fixture implements DependentFixtureInterface
 {
     /**
+     * @var Slugify
+     */
+    private $slugify;
+
+    /**
+     * AppFixtures constructor.
+     * @param Slugify $slugify
+     */
+    public function __construct(Slugify $slugify)
+    {
+        $this->slugify = $slugify;
+    }
+
+    /**
      * @return array
      */
     public function getDependencies()
@@ -27,8 +41,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $article = new Article();
             $article->setTitle(mb_strtolower($faker->sentence()));
 
-            $slugify = new Slugify();
-            $slug = $slugify->generate($article->getTitle());
+            $slug =  $this->slugify->generate($article->getTitle());
             $article->setSlug($slug);
 
             $article->setContent($faker->paragraph(10));
