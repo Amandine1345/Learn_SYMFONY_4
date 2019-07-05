@@ -94,6 +94,13 @@ class ArticleController extends AbstractController
      */
     public function edit(Request $request, Article $article, Slugify $slugify): Response
     {
+        // Access only if ROLE_ADMIN, or if it's  the article author
+        if ($article->getAuthor() != $this->getUser() &&  !($this->isGranted("ROLE_ADMIN"))) {
+           //throw $this->createAccessDeniedException();
+            $this->addFlash('danger', 'You are not the author of this article. You can not edit it!');
+            return $this->redirectToRoute('article_index');
+        }
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
