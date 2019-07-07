@@ -17,6 +17,11 @@
             {% else %}
                 No tags for this article
             {% endfor %}
+        <p class="text-right">
+            {% if is_granted('ROLE_AUTHOR') %}
+                <a href="{{ path('article_edit', { 'id': article.id} ) }}">Éditer</a>
+            {%endif%}
+        </p>
         <hr>
         <p>{{ article.content }}</p>
         <p class="text-right">
