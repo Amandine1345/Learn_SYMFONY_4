@@ -8,7 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="app_index")
+     * @Route({
+     *     "fr": "/",
+     *     "en": "/",
+     *     "es": "/",
+     * }, name="app_index")
      * @return Response
      */
     public function index(): Response

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Welcome to my Blog !</target>
+      </trans-unit>
+      <trans-unit id="2h94dQh" resname="testing.index">
+        <source>testing.index</source>
+        <target>Testing index() method from BlogController to view all articles.</target>
+      </trans-unit>
+      <trans-unit id="qvIyBkY" resname="title">
+        <source>title</source>
+        <target>My Blog</target>
+      </trans-unit>
+      <trans-unit id="yAxzhhm" resname="article.list">
+        <source>article.list</source>
+        <target>List of articles</target>
+      </trans-unit>
+      <trans-unit id="XneOvFD" resname="admin.title">
+        <source>admin.title</source>
+        <target>Magane Blog (admin)</target>
+      </trans-unit>
+      <trans-unit id="vYbl39O" resname="nav.item1">
+        <source>nav.item1</source>
+        <target>Articles</target>
+      </trans-unit>
+      <trans-unit id="7l4EXh0" resname="nav.item2">
+        <source>nav.item2</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="NeNpgJG" resname="nav.item3">
+        <source>nav.item3</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="oKr0OQU" resname="choose.language">
+        <source>choose.language</source>
+        <target>Choose your language...</target>
+      </trans-unit>
+      <trans-unit id="bQkiYak" resname="home.back">
+        <source>home.back</source>
+        <target>Back to homepage</target>
+      </trans-unit>
+      <trans-unit id="y_VO7_T" resname="blog.category.title">
+        <source>blog.category.title</source>
+        <target>All articles from category</target>
+      </trans-unit>
+      <trans-unit id="J7A8fND" resname="article.empty">
+        <source>article.empty</source>
+        <target>No article found</target>
+      </trans-unit>
+      <trans-unit id="KdvrFJK" resname="blog.article.list.title">
+        <source>blog.article.list.title</source>
+        <target>All articles from article's table : </target>
+      </trans-unit>
+      <trans-unit id="L3tHINf" resname="read.more">
+        <source>read.more</source>
+        <target>Read More</target>
+      </trans-unit>
+      <trans-unit id="Y_jukiJ" resname="tags.empty">
+        <source>tags.empty</source>
+        <target>No tags for this article</target>
+      </trans-unit>
+      <trans-unit id="jHzFINk" resname="article.author">
+        <source>article.author</source>
+        <target>Written by</target>
+      </trans-unit>
+      <trans-unit id="7bLNO3T" resname="category">
+        <source>category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="Qxfz9Bp" resname="article.list.back">
+        <source>article.list.back</source>
+        <target>Back to the list of articles</target>
+      </trans-unit>
+      <trans-unit id="PSTTuGk" resname="admin.article.add">
+        <source>admin.article.add</source>
+        <target>Article added successfully !</target>
+      </trans-unit>
+      <trans-unit id="Kd99AFq" resname="login.title">
+        <source>login.title</source>
+        <target>Please sign in</target>
+      </trans-unit>
+      <trans-unit id="g8hJY.0" resname="login.email">
+        <source>login.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="guXTUCg" resname="login.password">
+        <source>login.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="DBucN94" resname="login.signin">
+        <source>login.signin</source>
+        <target>Sign In</target>
+      </trans-unit>
+      <trans-unit id="Ngmsl53" resname="admin.email.object">
+        <source>admin.email.object</source>
+        <target>A new article was added !</target>
+      </trans-unit>
+      <trans-unit id="uodM2OR" resname="admin.accessonlyauthor">
+        <source>admin.accessonlyauthor</source>
+        <target>You are not authorized !</target>
+      </trans-unit>
+      <trans-unit id="n6_iCKz" resname="admin.article.edit">
+        <source>admin.article.edit</source>
+        <target>Success Edit</target>
+      </trans-unit>
+      <trans-unit id="lT2jweD" resname="admin.article.delete">
+        <source>admin.article.delete</source>
+        <target>Success Delete</target>
+      </trans-unit>
+      <trans-unit id="FzDxUsT" resname="admin.categorie.add">
+        <source>admin.categorie.add</source>
+        <target>Success Add</target>
+      </trans-unit>
+      <trans-unit id="eXmUzF3" resname="admin.categorie.edit">
+        <source>admin.categorie.edit</source>
+        <target>Success Edit</target>
+      </trans-unit>
+      <trans-unit id="2Gdp_kD" resname="admin.categorie.delete">
+        <source>admin.categorie.delete</source>
+        <target>Success Delete</target>
+      </trans-unit>
+      <trans-unit id="rvBunNr" resname="admin.tag.add">
+        <source>admin.tag.add</source>
+        <target>Success Add</target>
+      </trans-unit>
+      <trans-unit id="tFVjg4E" resname="admin.tag.edit">
+        <source>admin.tag.edit</source>
+        <target>Success Edit</target>
+      </trans-unit>
+      <trans-unit id="QNmoOtf" resname="admin.tag.delete">
+        <source>admin.tag.delete</source>
+        <target>Success Delete</target>
+      </trans-unit>
+      <trans-unit id="PEgjRvN" resname="back">
+        <source>back</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="KBF0Xv4" resname="delete.confirmation">
+        <source>delete.confirmation</source>
+        <target>Are you sure ?</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="QG7.sen" resname="created">
+        <source>created</source>
+        <target>Add</target>
+      </trans-unit>
+      <trans-unit id="gqNTf.D" resname="name">
+        <source>name</source>
+        <target>name</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>actions</target>
+      </trans-unit>
+      <trans-unit id="nhQz_k8" resname="no.results">
+        <source>no.results</source>
+        <target>No results</target>
+      </trans-unit>
+      <trans-unit id="ZhtJifQ" resname="create-new">
+        <source>create-new</source>
+        <target>Create new</target>
+      </trans-unit>
+      <trans-unit id="W12cLaV" resname="article.edit">
+        <source>article.edit</source>
+        <target>Edit article</target>
+      </trans-unit>
+      <trans-unit id="ARmG8Ow" resname="article.add">
+        <source>article.add</source>
+        <target>Add article</target>
+      </trans-unit>
+      <trans-unit id="7XACtDn" resname="content">
+        <source>content</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="HGMzUJ3" resname="show">
+        <source>show</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="hDk63Yx" resname="article">
+        <source>article</source>
+        <target>Article</target>
+      </trans-unit>
+      <trans-unit id="H.OjwYM" resname="favorite">
+        <source>favorite</source>
+        <target>Favorite</target>
+      </trans-unit>
+      <trans-unit id="eL_giUu" resname="category.edit">
+        <source>category.edit</source>
+        <target>Edit category</target>
+      </trans-unit>
+      <trans-unit id="ioK.HgH" resname="categorie.edit">
+        <source>categorie.edit</source>
+        <target>Edit category</target>
+      </trans-unit>
+      <trans-unit id="hjERhIW" resname="category.add">
+        <source>category.add</source>
+        <target>Add category</target>
+      </trans-unit>
+      <trans-unit id="VKhfRZB" resname="field.title">
+        <source>field.title</source>
+        <target>Title</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

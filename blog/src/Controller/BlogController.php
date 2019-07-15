@@ -38,9 +38,11 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route(
-     *     "/show/{slug}",
-     *     name="show",
+     * @Route({
+     *     "fr": "/voir/{slug}",
+     *     "en": "/show/{slug}",
+     *     "es": "/ver/{slug}",
+     * }, name="show",
      *     methods={"GET"},
      *     requirements={"slug" = "^[a-z0-9-]+"},
      *     defaults={"slug" = "article-sans-titre"}
@@ -71,9 +73,11 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route(
-     *     "/category/{name}",
-     *     name="category",
+     * @Route({
+     *     "fr": "/categorie/{name}",
+     *     "en": "/category/{name}",
+     *     "es": "/categorías/{name}",
+     * }, name="category",
      *     methods={"GET"},
      *     requirements={"name" = "^[a-z0-9-]+"},
      *     defaults={"name" = "category"}

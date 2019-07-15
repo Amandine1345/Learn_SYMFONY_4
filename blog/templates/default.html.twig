@@ -1,9 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Welcome in my Blog !</h1>
-
+    <h1>{{ 'welcome'|trans }}</h1>
     <a href="{{ path('blog_index') }}">
-        Testing index() method from BlogController to view all articles.
+        {{ 'testing.index'|trans }}
     </a>
 {% endblock %}

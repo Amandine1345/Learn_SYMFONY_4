@@ -8,13 +8,17 @@ use App\Repository\ArticleRepository;
 use App\Service\Slugify;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * @Route("/article")
+ * @Route({
+ *     "fr": "/article",
+ *     "en": "/article",
+ *     "es": "/articulo",
+ * })
  */
 class ArticleController extends AbstractController
 {
@@ -31,13 +35,18 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/creer",
+     *     "en": "/new",
+     *     "es": "/crear",
+     * }, name="article_new", methods={"GET","POST"})
      * @param Request $request
      * @param Slugify $slugify
      * @param \Swift_Mailer $mailer
+     * @param TranslatorInterface $translator
      * @return Response
      */
-    public function new(Request $request, Slugify $slugify, \Swift_Mailer $mailer): Response
+    public function new(Request $request, Slugify $slugify, \Swift_Mailer $mailer, TranslatorInterface $translator): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
@@ -54,7 +63,7 @@ class ArticleController extends AbstractController
 
             // Send email to administrator
             $administratorEmail = $this->getParameter('mailer_from');
-            $message = (new \Swift_Message('Un nouvel article vient d\'être publié !'))
+            $message = (new \Swift_Message($translator->trans('admin.email.object')))
                 ->setFrom( $administratorEmail)
                 ->setTo( $administratorEmail)
                 ->setBody(
@@ -64,7 +73,7 @@ class ArticleController extends AbstractController
             $mailer->send($message);
             // --
 
-            $this->addFlash('success', 'Article added successfully !');
+            $this->addFlash('success', $translator->trans('admin.article.add'));
 
             return $this->redirectToRoute('article_index');
         }
@@ -89,18 +98,23 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/{id}/edition",
+     *     "en": "/{id}/edit",
+     *     "es": "/{id}/editar",
+     * }, name="article_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Article $article
      * @param Slugify $slugify
+     * @param TranslatorInterface $translator
      * @return Response
      */
-    public function edit(Request $request, Article $article, Slugify $slugify): Response
+    public function edit(Request $request, Article $article, Slugify $slugify, TranslatorInterface $translator): Response
     {
         // Access only if ROLE_ADMIN, or if it's  the article author
         if ($article->getAuthor() != $this->getUser() &&  !($this->isGranted("ROLE_ADMIN"))) {
            //throw $this->createAccessDeniedException();
-            $this->addFlash('danger', 'You are not the author of this article. You can not edit it!');
+            $this->addFlash('danger', $translator->trans('admin.accessonlyauthor'));
             return $this->redirectToRoute('article_index');
         }
 
@@ -112,7 +126,7 @@ class ArticleController extends AbstractController
             $article->setSlug($slug);
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'Article edited successfully !');
+            $this->addFlash('success', $translator->trans('admin.article.edit'));
 
             return $this->redirectToRoute('article_index', [
                 'id' => $article->getId(),
@@ -129,16 +143,17 @@ class ArticleController extends AbstractController
      * @Route("/{id}", name="article_delete", methods={"DELETE"})
      * @param Request $request
      * @param Article $article
+     * @param TranslatorInterface $translator
      * @return Response
      */
-    public function delete(Request $request, Article $article): Response
+    public function delete(Request $request, Article $article, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
 
-            $this->addFlash('danger', 'Article deleted successfully !');
+            $this->addFlash('danger', $translator->trans('admin.article.delete'));
         }
 
         return $this->redirectToRoute('article_index');
@@ -146,12 +161,11 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}/favorite", name="article_favorite", methods={"GET","POST"})
-     * @param Request $request
      * @param Article $article
      * @param ObjectManager $manager
      * @return Response
      */
-    public function favorite(Request $request, Article $article, ObjectManager $manager): Response
+    public function favorite(Article $article, ObjectManager $manager): Response
     {
         if ($this->getUser()->getFavorites()->contains($article)) {
             $this->getUser()->removeFavorite($article)   ;

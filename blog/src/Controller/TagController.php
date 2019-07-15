@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/tag")
@@ -17,6 +18,8 @@ class TagController extends AbstractController
 {
     /**
      * @Route("/", name="tag_index", methods={"GET"})
+     * @param TagRepository $tagRepository
+     * @return Response
      */
     public function index(TagRepository $tagRepository): Response
     {
@@ -26,9 +29,16 @@ class TagController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="tag_new", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/creer",
+     *     "en": "/new",
+     *     "es": "/crear",
+     * }, name="tag_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param TranslatorInterface $translator
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TranslatorInterface $translator): Response
     {
         $tag = new Tag();
         $form = $this->createForm(TagType::class, $tag);
@@ -39,7 +49,7 @@ class TagController extends AbstractController
             $entityManager->persist($tag);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Tag added successfully !');
+            $this->addFlash('success', $translator->trans('admin.tag.add'));
 
             return $this->redirectToRoute('tag_index');
         }
@@ -51,19 +61,17 @@ class TagController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="tag_show", methods={"GET"})
+     * @Route({
+     *     "fr": "/{id}/edition",
+     *     "en": "/{id}/edit",
+     *     "es": "/{id}/editar",
+     * }, name="tag_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Tag $tag
+     * @param TranslatorInterface $translator
+     * @return Response
      */
-    public function show(Tag $tag): Response
-    {
-        return $this->render('tag/show.html.twig', [
-            'tag' => $tag,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="tag_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Tag $tag): Response
+    public function edit(Request $request, Tag $tag, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(TagType::class, $tag);
         $form->handleRequest($request);
@@ -71,7 +79,7 @@ class TagController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'Tag edited successfully !');
+            $this->addFlash('success', $translator->trans('admin.tag.edit'));
 
             return $this->redirectToRoute('tag_index', [
                 'id' => $tag->getId(),
@@ -86,15 +94,19 @@ class TagController extends AbstractController
 
     /**
      * @Route("/{id}", name="tag_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Tag $tag
+     * @param TranslatorInterface $translator
+     * @return Response
      */
-    public function delete(Request $request, Tag $tag): Response
+    public function delete(Request $request, Tag $tag, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete'.$tag->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tag);
             $entityManager->flush();
 
-            $this->addFlash('danger', 'Tag deleted successfully !');
+            $this->addFlash('danger', $translator->trans('admin.tag.delete'));
         }
 
         return $this->redirectToRoute('tag_index');

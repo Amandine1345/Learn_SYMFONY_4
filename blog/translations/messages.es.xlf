@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Bienvenido a mi blog</target>
+      </trans-unit>
+      <trans-unit id="2h94dQh" resname="testing.index">
+        <source>testing.index</source>
+        <target>Probando el método de índice () de BlogController para ver todos los artículos.</target>
+      </trans-unit>
+      <trans-unit id="PSTTuGk" resname="admin.article.add">
+        <source>admin.article.add</source>
+        <target>__admin.article.add</target>
+      </trans-unit>
+      <trans-unit id="qvIyBkY" resname="title">
+        <source>title</source>
+        <target>Mi Blog</target>
+      </trans-unit>
+      <trans-unit id="yAxzhhm" resname="article.list">
+        <source>article.list</source>
+        <target>Lista de articulos</target>
+      </trans-unit>
+      <trans-unit id="XneOvFD" resname="admin.title">
+        <source>admin.title</source>
+        <target>Administracion</target>
+      </trans-unit>
+      <trans-unit id="vYbl39O" resname="nav.item1">
+        <source>nav.item1</source>
+        <target>Articulos</target>
+      </trans-unit>
+      <trans-unit id="7l4EXh0" resname="nav.item2">
+        <source>nav.item2</source>
+        <target>Categorias</target>
+      </trans-unit>
+      <trans-unit id="NeNpgJG" resname="nav.item3">
+        <source>nav.item3</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Desconexión</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Conectarse</target>
+      </trans-unit>
+      <trans-unit id="oKr0OQU" resname="choose.language">
+        <source>choose.language</source>
+        <target>Elige tu idioma</target>
+      </trans-unit>
+      <trans-unit id="bQkiYak" resname="home.back">
+        <source>home.back</source>
+        <target>Retorno al inicio</target>
+      </trans-unit>
+      <trans-unit id="y_VO7_T" resname="blog.category.title">
+        <source>blog.category.title</source>
+        <target>Lista de articulos</target>
+      </trans-unit>
+      <trans-unit id="J7A8fND" resname="article.empty">
+        <source>article.empty</source>
+        <target>nada</target>
+      </trans-unit>
+      <trans-unit id="KdvrFJK" resname="blog.article.list.title">
+        <source>blog.article.list.title</source>
+        <target>Lista de articulos</target>
+      </trans-unit>
+      <trans-unit id="7bLNO3T" resname="category">
+        <source>category</source>
+        <target>Categoria</target>
+      </trans-unit>
+      <trans-unit id="L3tHINf" resname="read.more">
+        <source>read.more</source>
+        <target>Leer más</target>
+      </trans-unit>
+      <trans-unit id="Y_jukiJ" resname="tags.empty">
+        <source>tags.empty</source>
+        <target>-</target>
+      </trans-unit>
+      <trans-unit id="jHzFINk" resname="article.author">
+        <source>article.author</source>
+        <target>Escrito por</target>
+      </trans-unit>
+      <trans-unit id="Qxfz9Bp" resname="article.list.back">
+        <source>article.list.back</source>
+        <target>Retorno</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Editar</target>
+      </trans-unit>
+      <trans-unit id="Kd99AFq" resname="login.title">
+        <source>login.title</source>
+        <target>Por favor, inicie sesión</target>
+      </trans-unit>
+      <trans-unit id="g8hJY.0" resname="login.email">
+        <source>login.email</source>
+        <target>e-mail</target>
+      </trans-unit>
+      <trans-unit id="guXTUCg" resname="login.password">
+        <source>login.password</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="DBucN94" resname="login.signin">
+        <source>login.signin</source>
+        <target>Inicie sesión</target>
+      </trans-unit>
+      <trans-unit id="Ngmsl53" resname="admin.email.object">
+        <source>admin.email.object</source>
+        <target>Se ha añadido un nuevo artículo.</target>
+      </trans-unit>
+      <trans-unit id="uodM2OR" resname="admin.accessonlyauthor">
+        <source>admin.accessonlyauthor</source>
+        <target>Acceso no autorizado</target>
+      </trans-unit>
+      <trans-unit id="n6_iCKz" resname="admin.article.edit">
+        <source>admin.article.edit</source>
+        <target>El artículo ha sido editado con éxito.</target>
+      </trans-unit>
+      <trans-unit id="lT2jweD" resname="admin.article.delete">
+        <source>admin.article.delete</source>
+        <target>El artículo fue eliminado exitosamente</target>
+      </trans-unit>
+      <trans-unit id="FzDxUsT" resname="admin.categorie.add">
+        <source>admin.categorie.add</source>
+        <target>La categoría ha sido agregada exitosamente.</target>
+      </trans-unit>
+      <trans-unit id="eXmUzF3" resname="admin.categorie.edit">
+        <source>admin.categorie.edit</source>
+        <target>La categoría ha sido editada con éxito.</target>
+      </trans-unit>
+      <trans-unit id="2Gdp_kD" resname="admin.categorie.delete">
+        <source>admin.categorie.delete</source>
+        <target>La categoría ha sido eliminada exitosamente</target>
+      </trans-unit>
+      <trans-unit id="rvBunNr" resname="admin.tag.add">
+        <source>admin.tag.add</source>
+        <target>La etiqueta ha sido agregada exitosamente</target>
+      </trans-unit>
+      <trans-unit id="tFVjg4E" resname="admin.tag.edit">
+        <source>admin.tag.edit</source>
+        <target>La etiqueta ha sido editada con éxito.</target>
+      </trans-unit>
+      <trans-unit id="QNmoOtf" resname="admin.tag.delete">
+        <source>admin.tag.delete</source>
+        <target>Etiqueta eliminada exitosamente</target>
+      </trans-unit>
+      <trans-unit id="PEgjRvN" resname="back">
+        <source>back</source>
+        <target>regreso</target>
+      </trans-unit>
+      <trans-unit id="KBF0Xv4" resname="delete.confirmation">
+        <source>delete.confirmation</source>
+        <target>¿Estás seguro de que quieres eliminar?</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>eliminar</target>
+      </trans-unit>
+      <trans-unit id="QG7.sen" resname="created">
+        <source>created</source>
+        <target>crear</target>
+      </trans-unit>
+      <trans-unit id="gqNTf.D" resname="name">
+        <source>name</source>
+        <target>apellido</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>valores</target>
+      </trans-unit>
+      <trans-unit id="nhQz_k8" resname="no.results">
+        <source>no.results</source>
+        <target>Sin resultados</target>
+      </trans-unit>
+      <trans-unit id="ZhtJifQ" resname="create-new">
+        <source>create-new</source>
+        <target>crear</target>
+      </trans-unit>
+      <trans-unit id="W12cLaV" resname="article.edit">
+        <source>article.edit</source>
+        <target>Editar un artículo</target>
+      </trans-unit>
+      <trans-unit id="ARmG8Ow" resname="article.add">
+        <source>article.add</source>
+        <target>Agregar un articulo</target>
+      </trans-unit>
+      <trans-unit id="VKhfRZB" resname="field.title">
+        <source>field.title</source>
+        <target>título</target>
+      </trans-unit>
+      <trans-unit id="7XACtDn" resname="content">
+        <source>content</source>
+        <target>contenido</target>
+      </trans-unit>
+      <trans-unit id="HGMzUJ3" resname="show">
+        <source>show</source>
+        <target>Ver</target>
+      </trans-unit>
+      <trans-unit id="hDk63Yx" resname="article">
+        <source>article</source>
+        <target>artículo</target>
+      </trans-unit>
+      <trans-unit id="H.OjwYM" resname="favorite">
+        <source>favorite</source>
+        <target>favoritos</target>
+      </trans-unit>
+      <trans-unit id="eL_giUu" resname="category.edit">
+        <source>category.edit</source>
+        <target>Editar categoríat</target>
+      </trans-unit>
+      <trans-unit id="ioK.HgH" resname="categorie.edit">
+        <source>categorie.edit</source>
+        <target>Editar categoría</target>
+      </trans-unit>
+      <trans-unit id="hjERhIW" resname="category.add">
+        <source>category.add</source>
+        <target>Añadir categoría</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
